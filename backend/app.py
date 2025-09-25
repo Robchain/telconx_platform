@@ -1,12 +1,12 @@
 from flask import Flask, jsonify
 from flask_cors import CORS
 import random
-from datetime import datetime, timedelta
+from datetime import datetime
 
 app = Flask(__name__)
 CORS(app)
 
-# Datos mockeados - simulando BSS
+# Datos simulados
 MOCK_USERS = {
     "12345": {
         "id": "12345",
@@ -44,7 +44,7 @@ def get_customer_consumption(customer_id):
         
         user = MOCK_USERS[customer_id]
         
-        # Simular consumo en tiempo real con pequeñas variaciones
+        # Simulacion de tiempo real con variaciones
         current_data = user["data_consumed_gb"] + random.uniform(0, 0.5)
         current_minutes = user["minutes_consumed"] + random.randint(0, 10)
         
@@ -86,4 +86,5 @@ def get_customers():
     return jsonify(customers)
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    print("Servidor disponible en: http://localhost:5001")
+    app.run(debug=True, host='127.0.0.1', port=5001)
