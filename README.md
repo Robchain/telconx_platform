@@ -52,7 +52,7 @@ Solución de prueba técnica para el módulo de visualización de consumo en tie
 
 3. **Acceder a la aplicación**
    - Frontend: http://localhost:4200
-   - Backend API: http://localhost:5000
+   - Backend API: http://localhost:5001
 
 ### Opción 2: Instalación Manual
 
